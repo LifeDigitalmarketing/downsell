@@ -1,0 +1,136 @@
+<!DOCTYPE html><html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Última Chance | Oferta Exclusiva</title>
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Segoe UI', sans-serif;
+      background: url('fotodefundo.jpg') center/cover no-repeat;
+      backdrop-filter: blur(4px) brightness(0.5);
+      overflow-x: hidden;
+    }
+    .container {
+      max-width: 600px;
+      margin: auto;
+      padding: 2rem;
+      color: white;
+      text-align: center;
+    }
+    h1 {
+      font-size: 2.2rem;
+      color: #b388f4;
+      animation: fadeIn 1s ease-in-out;
+    }
+    .price {
+      font-size: 2rem;
+      margin: 1rem 0;
+    }
+    .price del {
+      color: #bbb;
+    }
+    .price span {
+      color: #b388f4;
+      font-weight: bold;
+    }
+    .button {
+      background: #b388f4;
+      border: none;
+      color: white;
+      font-size: 1.2rem;
+      padding: 0.8rem 1.6rem;
+      border-radius: 30px;
+      cursor: pointer;
+      transition: all 0.3s ease;
+    }
+    .button:hover {
+      background: #8a5edc;
+      transform: scale(1.05);
+    }
+    .timer {
+      font-size: 1.4rem;
+      margin: 1.5rem 0;
+      animation: pulse 1s infinite;
+    }
+    @keyframes pulse {
+      0% { transform: scale(1); }
+      50% { transform: scale(1.1); }
+      100% { transform: scale(1); }
+    }
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(-10px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+    .notification {
+      position: fixed;
+      bottom: 30px;
+      left: 30px;
+      background-color: rgba(0,0,0,0.85);
+      color: white;
+      padding: 12px 18px;
+      border-radius: 10px;
+      font-size: 0.9rem;
+      box-shadow: 0 4px 20px rgba(0,0,0,0.4);
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      z-index: 1000;
+      animation: slideIn 0.7s ease, fadeOut 0.7s ease 5s forwards;
+    }
+    .notification i {
+      color: #8a5edc;
+    }
+    @keyframes slideIn {
+      from { transform: translateX(-120%); opacity: 0; }
+      to { transform: translateX(0); opacity: 1; }
+    }
+    @keyframes fadeOut {
+      to { opacity: 0; transform: translateY(20px); }
+    }
+  </style>
+</head>
+<body>
+  <div class="container" data-aos="fade-up">
+    <h1>⚠️ Última Chance de Garantir</h1>
+    <p style="margin-top: 1rem; font-size: 1.1rem;">Você saiu da página principal... Mas essa é sua <strong>ÚLTIMA OPORTUNIDADE</strong>!</p>
+    <div class="price">
+      De <del>R$89,90</del> por apenas <span>R$9,90</span> 😱
+    </div>
+    <div class="timer" id="countdown">Oferta expira em: 10:00</div>
+    <a href="https://pay.cakto.com.br/3cpbeyo_421390"><button class="button">Quero Aproveitar Agora</button></a>
+  </div>  <div id="notifications"></div>  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>  <script>
+    AOS.init();
+
+    // CONTADOR 10 MINUTOS
+    let countdown = 600;
+    const countdownElement = document.getElementById("countdown");
+    setInterval(() => {
+      if (countdown <= 0) return;
+      countdown--;
+      const minutes = Math.floor(countdown / 60).toString().padStart(2, '0');
+      const seconds = (countdown % 60).toString().padStart(2, '0');
+      countdownElement.textContent = `Oferta expira em: ${minutes}:${seconds}`;
+    }, 1000);
+
+    // NOTIFICAÇÕES FAKE
+    const nomes = [
+      "Eduardo Martins", "Camila Rocha", "Felipe Souza", "Amanda Lima", "Lucas Barros",
+      "Patrícia Gomes", "Diego Ramos", "Sofia Fernandes", "Bruno Oliveira", "Letícia Silva",
+      "Rafael Costa", "Juliana Pereira", "Matheus Araújo", "Isabela Cunha", "Daniel Monteiro"
+    ];
+    function showNotification(nome) {
+      const noti = document.createElement('div');
+      noti.className = 'notification';
+      noti.innerHTML = `<i>✔️</i> <strong>${nome}</strong> acabou de comprar - <span style="color: #b388f4">Oferta Limitada</span>`;
+      document.getElementById('notifications').appendChild(noti);
+      setTimeout(() => noti.remove(), 6000);
+    }
+    let index = 0;
+    setInterval(() => {
+      showNotification(nomes[index % nomes.length]);
+      index++;
+    }, 10000);
+  </script></body>
+</html>
