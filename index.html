@@ -6,69 +6,85 @@
   <title>Última Chance - Only Imports</title>
   <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;600;700&display=swap" rel="stylesheet">
   <style>
+    * {
+      box-sizing: border-box;
+    }
     body {
-      font-family: 'Outfit', sans-serif;
       margin: 0;
       padding: 0;
-      background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)),
-        url('https://i.postimg.cc/6q6p97XC/fundofinal.png') center/cover no-repeat;
+      font-family: 'Outfit', sans-serif;
+      background: linear-gradient(rgba(0, 0, 0, 0.75), rgba(0, 0, 0, 0.75)),
+        url('fotodefundo.jpg') center/cover no-repeat;
       color: white;
+      height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
       text-align: center;
-      overflow-x: hidden;
+      overflow: hidden;
     }
+
     .container {
-      padding: 3rem 1rem;
       max-width: 600px;
-      margin: auto;
+      padding: 2rem;
+      animation: fadeInUp 1.2s ease-in-out;
     }
+
     h1 {
-      font-size: 2.5rem;
+      font-size: 2.8rem;
       margin-bottom: 0.5rem;
       animation: fadeInDown 1s ease-in-out;
     }
+
     h1 span {
       color: #a855f7;
     }
+
     p {
       font-size: 1.2rem;
       line-height: 1.6;
-      margin-bottom: 1.5rem;
-      animation: fadeInUp 1.2s ease-in-out;
+      margin: 1rem 0;
     }
+
     .price {
       font-size: 2rem;
       font-weight: bold;
-      margin: 1rem 0;
+      margin: 1.2rem 0;
       animation: fadeIn 1.5s ease-in-out;
     }
+
     .price s {
       color: #ccc;
       font-size: 1.2rem;
       margin-right: 10px;
     }
+
     .btn {
       background-color: #a855f7;
       color: white;
-      padding: 1rem 2rem;
+      padding: 1rem 2.2rem;
       border: none;
       font-size: 1.2rem;
       border-radius: 50px;
       cursor: pointer;
-      transition: transform 0.2s ease, box-shadow 0.3s ease;
-      animation: pulse 2s infinite;
       text-decoration: none;
       display: inline-block;
+      transition: all 0.3s ease;
+      animation: pulse 2s infinite;
     }
+
     .btn:hover {
       transform: scale(1.05);
       box-shadow: 0 0 15px #a855f7;
     }
+
     .timer {
       font-size: 1.5rem;
-      margin: 1.5rem 0;
+      margin: 1.2rem 0;
       color: #a855f7;
       font-weight: bold;
     }
+
     .notification {
       position: fixed;
       bottom: 20px;
@@ -81,7 +97,9 @@
       box-shadow: 0 0 10px rgba(168, 85, 247, 0.6);
       animation: slideUp 0.6s ease forwards;
       opacity: 0;
+      z-index: 9999;
     }
+
     @keyframes slideUp {
       0% {
         transform: translateY(20px);
@@ -92,31 +110,47 @@
         opacity: 1;
       }
     }
+
     @keyframes fadeInDown {
       from { opacity: 0; transform: translateY(-30px); }
       to { opacity: 1; transform: translateY(0); }
     }
+
     @keyframes fadeInUp {
       from { opacity: 0; transform: translateY(30px); }
       to { opacity: 1; transform: translateY(0); }
     }
+
+    @keyframes fadeIn {
+      from { opacity: 0; }
+      to { opacity: 1; }
+    }
+
     @keyframes pulse {
       0% { box-shadow: 0 0 0 0 rgba(168, 85, 247, 0.6); }
       70% { box-shadow: 0 0 0 10px rgba(168, 85, 247, 0); }
       100% { box-shadow: 0 0 0 0 rgba(168, 85, 247, 0); }
+    }
+
+    @media (max-width: 600px) {
+      h1 {
+        font-size: 2rem;
+      }
+      .price {
+        font-size: 1.6rem;
+      }
     }
   </style>
 </head>
 <body>
   <div class="container">
     <h1>⚠️ <span>Última Chance</span></h1>
-    <p>Você está a um clique de mudar sua vida.</p>
-    <p>Por motivos de estoque, você tem uma nova oportunidade de garantir <strong>o acesso completo</strong> à nossa lista de fornecedores exclusivos.</p>
-    <p><strong>Não cometa o erro de fechar essa página!</strong><br>Essa é literalmente sua ÚLTIMA chance de aproveitar com <strong>90% de desconto</strong>.</p>
-    <p class="price"><s>R$97,00</s> R$9,90 à vista</p>
-    <p><strong>Tenha acesso agora à lista da fonte dos fornecedores.</strong></p>
+    <p>Essa é sua última oportunidade para garantir o acesso à nossa lista VIP de fornecedores exclusivos.</p>
+    <p><strong>Não feche essa página</strong> — o sistema está oferecendo <strong>90% de desconto</strong> só agora!</p>
+    <p class="price"><s>R$97,00</s> R$9,90</p>
+    <p><strong>Tenha acesso agora à fonte dos fornecedores que abastecem os maiores revendedores do Brasil.</strong></p>
     <div class="timer">Oferta expira em: <span id="countdown">10:00</span></div>
-    <a href="https://pay.cakto.com.br/5dzd8u9" class="btn">🔓 Liberar Acesso Agora</a>
+    <a href="https://pay.cakto.com.br/3cpbeyo_421390" class="btn">🔓 Liberar Acesso Agora</a>
   </div>
 
   <script>
