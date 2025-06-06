@@ -1,135 +1,138 @@
 <!DOCTYPE html><html lang="pt-BR">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Última Chance | Oferta Exclusiva</title>
-  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Última Chance - Only Imports</title>
+  <link href="https://fonts.googleapis.com/css2?family=Archivo+Black&family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
   <style>
     body {
       margin: 0;
-      font-family: 'Segoe UI', sans-serif;
-      background: url('fotodefundo.jpg') center/cover no-repeat;
-      backdrop-filter: blur(4px) brightness(0.5);
+      font-family: 'Montserrat', sans-serif;
+      background: url('https://cdn.pixabay.com/photo/2017/08/06/11/20/ecommerce-2598695_1280.jpg') no-repeat center center fixed;
+      background-size: cover;
+      backdrop-filter: blur(6px) brightness(0.5);
+      color: white;
       overflow-x: hidden;
     }
     .container {
-      max-width: 600px;
-      margin: auto;
       padding: 2rem;
-      color: white;
       text-align: center;
-    }
-    h1 {
-      font-size: 2.2rem;
-      color: #b388f4;
       animation: fadeIn 1s ease-in-out;
+    }
+    .headline {
+      font-family: 'Archivo Black', sans-serif;
+      font-size: 2.5rem;
+      color: #b383ff;
+      text-shadow: 2px 2px 8px rgba(0,0,0,0.6);
+      animation: glow 3s infinite ease-in-out;
+    }
+    .subheadline {
+      font-size: 1.2rem;
+      margin-top: 1rem;
+      color: #ccc;
     }
     .price {
       font-size: 2rem;
-      margin: 1rem 0;
+      margin: 2rem 0;
     }
     .price del {
-      color: #bbb;
+      color: #aaa;
+      margin-right: 1rem;
     }
-    .price span {
-      color: #b388f4;
-      font-weight: bold;
+    .price strong {
+      color: #b383ff;
+      font-size: 2.5rem;
     }
-    .button {
-      background: #b388f4;
-      border: none;
-      color: white;
+    .btn {
+      padding: 1rem 2rem;
       font-size: 1.2rem;
-      padding: 0.8rem 1.6rem;
-      border-radius: 30px;
+      background: #b383ff;
+      color: white;
+      border: none;
+      border-radius: 8px;
       cursor: pointer;
-      transition: all 0.3s ease;
+      box-shadow: 0 0 12px #b383ff99;
+      transition: transform 0.2s ease;
     }
-    .button:hover {
-      background: #8a5edc;
+    .btn:hover {
       transform: scale(1.05);
     }
     .timer {
-      font-size: 1.4rem;
-      margin: 1.5rem 0;
-      animation: pulse 1s infinite;
-    }
-    @keyframes pulse {
-      0% { transform: scale(1); }
-      50% { transform: scale(1.1); }
-      100% { transform: scale(1); }
-    }
-    @keyframes fadeIn {
-      from { opacity: 0; transform: translateY(-10px); }
-      to { opacity: 1; transform: translateY(0); }
+      font-size: 1.8rem;
+      margin-top: 1rem;
+      color: #fff;
+      font-weight: bold;
     }
     .notification {
       position: fixed;
-      bottom: 30px;
-      left: 30px;
-      background-color: rgba(0,0,0,0.85);
+      bottom: 20px;
+      left: 20px;
+      background: #1a1a1a;
       color: white;
-      padding: 12px 18px;
+      padding: 1rem 1.5rem;
       border-radius: 10px;
-      font-size: 0.9rem;
-      box-shadow: 0 4px 20px rgba(0,0,0,0.4);
-      display: flex;
-      align-items: center;
-      gap: 10px;
-      z-index: 1000;
-      animation: slideIn 0.7s ease, fadeOut 0.7s ease 5s forwards;
+      box-shadow: 0 0 10px rgba(179, 131, 255, 0.7);
+      animation: slideUp 0.6s ease forwards, fadeOut 0.5s ease 8s forwards;
+      opacity: 0;
     }
-    .notification i {
-      color: #8a5edc;
-    }
-    @keyframes slideIn {
-      from { transform: translateX(-120%); opacity: 0; }
-      to { transform: translateX(0); opacity: 1; }
+    @keyframes slideUp {
+      from {
+        transform: translateY(50px);
+        opacity: 0;
+      }
+      to {
+        transform: translateY(0);
+        opacity: 1;
+      }
     }
     @keyframes fadeOut {
-      to { opacity: 0; transform: translateY(20px); }
+      to {
+        opacity: 0;
+        transform: translateY(-30px);
+      }
+    }
+    @keyframes glow {
+      0%, 100% { text-shadow: 0 0 5px #b383ff, 0 0 10px #b383ff; }
+      50% { text-shadow: 0 0 15px #b383ff, 0 0 25px #b383ff; }
+    }
+    @keyframes fadeIn {
+      from { opacity: 0; transform: scale(0.95); }
+      to { opacity: 1; transform: scale(1); }
     }
   </style>
 </head>
 <body>
-  <div class="container" data-aos="fade-up">
-    <h1>⚠️ Última Chance de Garantir</h1>
-    <p style="margin-top: 1rem; font-size: 1.1rem;">Você saiu da página principal... Mas essa é sua <strong>ÚLTIMA OPORTUNIDADE</strong>!</p>
+  <div class="container">
+    <h1 class="headline">⚠️ Última Chance com 90% de Desconto!</h1>
+    <p class="subheadline">Você saiu da oferta principal, mas... temos uma última proposta <strong>exclusiva</strong> só para agora:</p>
     <div class="price">
-      De <del>R$89,90</del> por apenas <span>R$9,90</span> 😱
+      <del>R$97,00</del>
+      <strong>R$9,90</strong>
     </div>
-    <div class="timer" id="countdown">Oferta expira em: 10:00</div>
-    <a href="https://pay.cakto.com.br/3cpbeyo_421390"><button class="button">Quero Aproveitar Agora</button></a>
-  </div>  <div id="notifications"></div>  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>  <script>
-    AOS.init();
-
-    // CONTADOR 10 MINUTOS
-    let countdown = 600;
-    const countdownElement = document.getElementById("countdown");
-    setInterval(() => {
-      if (countdown <= 0) return;
-      countdown--;
-      const minutes = Math.floor(countdown / 60).toString().padStart(2, '0');
-      const seconds = (countdown % 60).toString().padStart(2, '0');
-      countdownElement.textContent = `Oferta expira em: ${minutes}:${seconds}`;
+    <button class="btn" onclick="window.location.href='https://pay.cakto.com.br/3cpbeyo_421390'">Quero aproveitar agora!</button>
+    <div class="timer" id="countdown">10:00</div>
+  </div>  <script>
+    // Countdown Timer
+    let duration = 600;
+    const countdown = document.getElementById("countdown");
+    const interval = setInterval(() => {
+      const minutes = String(Math.floor(duration / 60)).padStart(2, '0');
+      const seconds = String(duration % 60).padStart(2, '0');
+      countdown.textContent = `${minutes}:${seconds}`;
+      duration--;
+      if (duration < 0) clearInterval(interval);
     }, 1000);
 
-    // NOTIFICAÇÕES FAKE
-    const nomes = [
-      "Eduardo Martins", "Camila Rocha", "Felipe Souza", "Amanda Lima", "Lucas Barros",
-      "Patrícia Gomes", "Diego Ramos", "Sofia Fernandes", "Bruno Oliveira", "Letícia Silva",
-      "Rafael Costa", "Juliana Pereira", "Matheus Araújo", "Isabela Cunha", "Daniel Monteiro"
-    ];
-    function showNotification(nome) {
-      const noti = document.createElement('div');
-      noti.className = 'notification';
-      noti.innerHTML = `<i>✔️</i> <strong>${nome}</strong> acabou de comprar - <span style="color: #b388f4">Oferta Limitada</span>`;
-      document.getElementById('notifications').appendChild(noti);
-      setTimeout(() => noti.remove(), 6000);
-    }
+    // Fake Purchase Notifications
+    const names = ["Eduardo Martins", "Luciana Souza", "Pedro Lima", "Mariana Rocha", "Carlos Henrique", "Aline Dias", "Felipe Moraes", "Juliana Paiva", "Renan Gomes", "Paola Fernandes", "Thiago Lemos", "Ana Beatriz", "Caio Costa", "Fernanda Luz", "Rafael Torres"];
     let index = 0;
+
     setInterval(() => {
-      showNotification(nomes[index % nomes.length]);
+      const notification = document.createElement('div');
+      notification.className = 'notification';
+      notification.textContent = `${names[index % names.length]} acabou de comprar - Oferta Limitada`;
+      document.body.appendChild(notification);
+      setTimeout(() => notification.remove(), 8500);
       index++;
     }, 10000);
   </script></body>
